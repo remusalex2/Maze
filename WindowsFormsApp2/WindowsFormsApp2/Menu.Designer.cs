@@ -118,7 +118,7 @@
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.label1);
             this.Name = "Menu";
-            this.Text = "Menu";
+            this.Text = "Maze";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
