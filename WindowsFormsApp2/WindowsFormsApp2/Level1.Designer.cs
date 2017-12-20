@@ -158,7 +158,6 @@
             this.finishLabel.Size = new System.Drawing.Size(34, 13);
             this.finishLabel.TabIndex = 7;
             this.finishLabel.Text = "Finish";
-            this.finishLabel.Click += new System.EventHandler(this.finishLabel_Click);
             this.finishLabel.MouseEnter += new System.EventHandler(this.finishLabel_MouseEnter);
             // 
             // label7
@@ -668,6 +667,7 @@
             this.MaximizeBox = false;
             this.Name = "Level1";
             this.Text = "Level1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Level1_FormClosing);
             this.MouseLeave += new System.EventHandler(this.Mouse_leave);
             this.ResumeLayout(false);
             this.PerformLayout();

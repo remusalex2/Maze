@@ -12,17 +12,10 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
             MoveToStart();
-            label51.MouseEnter -= wall_MouseEnter;
+            Enter -= wall_MouseEnter;
         }
 
-        private void finishLabel_MouseEnter(object sender, EventArgs e)
-        {
-            MessageBox.Show("Bravo!");
-            finish = true;
-            Close();
-        }
-
-        private void FormClosing1(object sender, FormClosingEventArgs e)
+        private void Level1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (finish == true)
                 this.DialogResult = DialogResult.OK;
@@ -66,9 +59,11 @@ namespace WindowsFormsApp2
             label52.Visible = false;
         }
 
-        private void finishLabel_Click(object sender, EventArgs e)
+        private void finishLabel_MouseEnter(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Bravo!");
+            finish = true;
+            Close();
         }
 
         private void Mouse_leave(object sender, EventArgs e)
@@ -78,6 +73,6 @@ namespace WindowsFormsApp2
                 mouse_on_control |= c.RectangleToScreen(c.ClientRectangle).Contains(Cursor.Position);
             if (!mouse_on_control)
                 Close();
-        }
+        }       
     }
 }

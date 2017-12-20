@@ -12,19 +12,19 @@ namespace WindowsFormsApp2
             InitializeComponent();
         }
 
-        private void FinishEnter(object sender, EventArgs e)
-        {
-            MessageBox.Show("Bravo!");
-            finish = true;
-            Close();
-        }
-
         private void FormClosing1(object sender, FormClosingEventArgs e)
         {
             if (finish == true)
                 this.DialogResult = DialogResult.OK;
             else
                 this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void FinishEnter(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bravo!");
+            finish = true;
+            Close();
         }
 
         private void Mouse_leave(object sender, EventArgs e)
