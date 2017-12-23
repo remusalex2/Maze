@@ -10,6 +10,7 @@ namespace WindowsFormsApp2
         bool finish = false;
         private Stopwatch watch;
         public Int64 elapsedMs;
+        public Int64 BestTime;
 
         public Level1()
         {
@@ -24,7 +25,10 @@ namespace WindowsFormsApp2
             watch.Stop();
             elapsedMs = watch.ElapsedMilliseconds;
             if (finish == true)
+            {
                 this.DialogResult = DialogResult.OK;
+                
+            }
             else
                 this.DialogResult = DialogResult.Cancel;
         }
