@@ -7,7 +7,7 @@ namespace WindowsFormsApp2
 {
     public partial class Level1 : Form
     {
-        private bool finish = false;
+        bool finish = false;
         private Stopwatch watch;
         public Int64 elapsedMs;
 

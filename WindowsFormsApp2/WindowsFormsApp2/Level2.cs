@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
@@ -6,14 +7,19 @@ namespace WindowsFormsApp2
     public partial class Level2 : Form
     {
         bool finish = false;
+        private Stopwatch watch;
+        public Int64 elapsedMs;
 
         public Level2()
         {
             InitializeComponent();
+            watch = Stopwatch.StartNew();
         }
 
         private void FormClosing1(object sender, FormClosingEventArgs e)
         {
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
             if (finish == true)
                 this.DialogResult = DialogResult.OK;
             else

@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Level3
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Level3";
             this.Text = "Level3";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Level3_FormClosing);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -22,3 +22,4 @@ D:\Programare\Maze\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.
 D:\Programare\Maze\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.csproj.CoreCompileInputs.cache
 D:\Programare\Maze\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.exe
 D:\Programare\Maze\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.pdb
+D:\Programare\Maze\WindowsFormsApp2\WindowsFormsApp2\obj\Debug\WindowsFormsApp2.Level3.resources

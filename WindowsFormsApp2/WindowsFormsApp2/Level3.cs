@@ -1,20 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
     public partial class Level3 : Form
     {
+        private Stopwatch watch;
+        public Int64 elapsedMs;
+
         public Level3()
         {
             InitializeComponent();
+            watch = Stopwatch.StartNew();
+        }
+
+        private void Level3_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
         }
     }
 }
