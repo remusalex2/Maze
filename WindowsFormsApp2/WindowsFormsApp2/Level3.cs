@@ -19,6 +19,7 @@ namespace WindowsFormsApp2
         {
             watch.Stop();
             elapsedMs = watch.ElapsedMilliseconds;
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

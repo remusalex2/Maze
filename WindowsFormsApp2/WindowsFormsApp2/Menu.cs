@@ -22,13 +22,13 @@ namespace WindowsFormsApp2
                 {
                     label2.Text = "1: OK";
                     label2.BackColor = Color.Green;
+                    label5.Text = (level1.elapsedMs / 1000F).ToString();
                 }
                 else
                 {
                     label2.Text = "1: NOT OK";
                     label2.BackColor = Color.Red;
                 }
-                label5.Text = (level1.elapsedMs / 1000F).ToString();
             }
             if (numericUpDown2.Value == 2)
             {
@@ -38,23 +38,25 @@ namespace WindowsFormsApp2
                 {
                     label3.Text = "2: OK";
                     label3.BackColor = Color.Green;
+                    label6.Text = (level2.elapsedMs / 1000F).ToString();
                 }
                 else
                 {
                     label3.Text = "2: NOT OK";
                     label3.BackColor = Color.Red;
                 }
-                label6.Text = (level2.elapsedMs / 1000F).ToString();
             }
             if (numericUpDown2.Value == 3)
             {
                 Level3 level3 = new Level3();
                 level3.ShowDialog();
                 if (level3.DialogResult == DialogResult.OK)
+                {
                     label4.Text = "3: OK";
+                    label7.Text = (level3.elapsedMs / 1000F).ToString();
+                }
                 else
                     label4.Text = "3: NOT OK";
-                label7.Text = (level3.elapsedMs / 1000F).ToString();
             }
         }
     }
