@@ -43,6 +43,10 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +54,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(89, 146);
+            this.label1.Location = new System.Drawing.Point(151, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 0;
@@ -59,7 +63,7 @@
             // numericUpDown2
             // 
             this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown2.Location = new System.Drawing.Point(159, 146);
+            this.numericUpDown2.Location = new System.Drawing.Point(221, 63);
             this.numericUpDown2.Maximum = new decimal(new int[] {
             3,
             0,
@@ -83,7 +87,7 @@
             // 
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(177, 192);
+            this.button1.Location = new System.Drawing.Point(266, 140);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 28);
             this.button1.TabIndex = 3;
@@ -175,7 +179,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(342, 257);
+            this.label10.Location = new System.Drawing.Point(351, 257);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 20);
             this.label10.TabIndex = 15;
@@ -185,7 +189,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(342, 357);
+            this.label11.Location = new System.Drawing.Point(351, 357);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 20);
             this.label11.TabIndex = 14;
@@ -195,7 +199,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(342, 324);
+            this.label12.Location = new System.Drawing.Point(351, 324);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(31, 20);
             this.label12.TabIndex = 13;
@@ -205,19 +209,63 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(342, 292);
+            this.label13.Location = new System.Drawing.Point(351, 292);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(31, 20);
             this.label13.TabIndex = 12;
             this.label13.Text = "n/a";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(490, 292);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 20);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "n/a";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(490, 324);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(31, 20);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "n/a";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(490, 357);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 20);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "n/a";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(490, 257);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(100, 20);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "BEST EVER";
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 482);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.label10);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.label11);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label9);
@@ -256,5 +304,9 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
     }
 }

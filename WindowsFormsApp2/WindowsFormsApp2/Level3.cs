@@ -9,6 +9,7 @@ namespace WindowsFormsApp2
         private Stopwatch watch;
         public Int64 elapsedMs;
         public Int64 BestTime;
+        public Int64 BestEver;
 
         public Level3()
         {

@@ -11,6 +11,7 @@ namespace WindowsFormsApp2
         private Stopwatch watch;
         public Int64 elapsedMs;
         public Int64 BestTime;
+        public Int64 BestEver;
 
         public Level1()
         {
@@ -71,7 +72,7 @@ namespace WindowsFormsApp2
 
         private void finishLabel_MouseEnter(object sender, EventArgs e)
         {
-            MessageBox.Show("Bravo!");
+            //MessageBox.Show("Bravo!");
             finish = true;
             Close();
         }
