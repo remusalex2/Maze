@@ -28,6 +28,7 @@ namespace WindowsFormsApp2
                     label2.Text = "1: NOT OK";
                     label2.BackColor = Color.Red;
                 }
+                label5.Text = (level1.elapsedMs / 1000F).ToString() ;
             }
             if (numericUpDown2.Value == 2)
             {
@@ -53,6 +54,11 @@ namespace WindowsFormsApp2
                 else
                     label4.Text = "2: NOT OK";
             }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

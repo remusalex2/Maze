@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,17 +7,22 @@ namespace WindowsFormsApp2
 {
     public partial class Level1 : Form
     {
-        bool finish = false;
+        private bool finish = false;
+        private Stopwatch watch;
+        public Int64 elapsedMs;
 
         public Level1()
         {
             InitializeComponent();
             MoveToStart();
             Enter -= wall_MouseEnter;
+            watch = Stopwatch.StartNew();
         }
 
         private void Level1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            watch.Stop();
+            elapsedMs = watch.ElapsedMilliseconds;
             if (finish == true)
                 this.DialogResult = DialogResult.OK;
             else
@@ -73,6 +79,6 @@ namespace WindowsFormsApp2
                 mouse_on_control |= c.RectangleToScreen(c.ClientRectangle).Contains(Cursor.Position);
             if (!mouse_on_control)
                 Close();
-        }       
+        }
     }
 }
