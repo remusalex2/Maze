@@ -2,11 +2,15 @@
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using System.Xml;
+using System.Xml.Serialization;
+using WindowsFormsApp2.Resources;
 
 namespace WindowsFormsApp2
 {
     public partial class Menu : Form
     {
+        public string FirstName;
         public Int64 BestTime1 = Int64.MaxValue;
         public Int64 BestTime2 = Int64.MaxValue;
         public Int64 BestTime3 = Int64.MaxValue;
@@ -14,38 +18,51 @@ namespace WindowsFormsApp2
         public Int64 BestEver2 = Int64.MaxValue;
         public Int64 BestEver3 = Int64.MaxValue;
 
+        public ClassPlayer Player { get; set; }
+
         public Menu()
         {
             InitializeComponent();
+            LoadPlayer();
+        }
 
-            // Read the file and display it line by line.
-            StreamReader file;
+        public void LoadPlayer()
+        {
             try
             {
-                file = new StreamReader(@"..\Resources\BestEverTime1.txt");
-                BestEver1 = Convert.ToInt64(file.ReadLine());
-                file.Close();
-                label14.Text = (BestEver1 / 1000F).ToString();
-            }
-            catch { }
+                Player = new ClassPlayer();
 
-            try
-            {
-                file = new StreamReader(@"..\Resources\BestEverTime2.txt");
-                BestEver2 = Convert.ToInt64(file.ReadLine());
-                file.Close();
-                label15.Text = (BestEver2 / 1000F).ToString();
-            }
-            catch { }
+                var serializer = new XmlSerializer(typeof(ClassPlayer));
+                using (var reader = XmlReader.Create(@"..\Resources\Players.xml"))
+                {
+                    Player = (ClassPlayer)serializer.Deserialize(reader);
+                }
 
-            try
-            {
-                file = new StreamReader(@"..\Resources\BestEverTime3.txt");
-                BestEver3 = Convert.ToInt64(file.ReadLine());
-                file.Close();
-                label16.Text = (BestEver3 / 1000F).ToString();
+                textBox1.Text = Player.FirstName;
+                BestEver1 = Player.BestEver1;
+                BestEver2 = Player.BestEver2;
+                BestEver3 = Player.BestEver3;
+                if (BestEver1 != long.MaxValue)
+                    label14.Text = (BestEver1 / 1000F).ToString();
+                if (BestEver2 != long.MaxValue)
+                    label15.Text = (BestEver2 / 1000F).ToString();
+                if (BestEver3 != long.MaxValue)
+                    label16.Text = (BestEver3 / 1000F).ToString();
             }
             catch { }
+        }
+
+        public void SavePlayer()
+        {
+            Player.FirstName = textBox1.Text;
+            Player.BestEver1 = BestEver1;
+            Player.BestEver2 = BestEver2;
+            Player.BestEver3 = BestEver3;
+            var serializer = new XmlSerializer(Player.GetType());
+            using (var writer = XmlWriter.Create(@"..\Resources\Players.xml"))
+            {
+                serializer.Serialize(writer, Player);
+            }
         }
 
         private void StartClick(object sender, EventArgs e)
@@ -67,22 +84,6 @@ namespace WindowsFormsApp2
                     if (level1.elapsedMs < level1.BestEver)
                         BestEver1 = level1.elapsedMs;
                     label14.Text = (BestEver1 / 1000F).ToString();
-
-                    try
-                    {
-                        // If the directory doesn't exist, create it.
-                        if (!Directory.Exists(@"..\Resources"))
-                            Directory.CreateDirectory(@"..\Resources");
-
-                        using (StreamWriter file = new StreamWriter(@"..\Resources\BestEverTime1.txt"))
-                        {
-                            file.WriteLine(BestEver1);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
                 }
                 else
                 {
@@ -107,22 +108,6 @@ namespace WindowsFormsApp2
                     if (level2.elapsedMs < level2.BestEver)
                         BestEver2 = level2.elapsedMs;
                     label15.Text = (BestEver2 / 1000F).ToString();
-
-                    try
-                    {
-                        // If the directory doesn't exist, create it.
-                        if (!Directory.Exists(@"..\Resources"))
-                            Directory.CreateDirectory(@"..\Resources");
-
-                        using (StreamWriter file = new StreamWriter(@"..\Resources\BestEverTime2.txt"))
-                        {
-                            file.WriteLine(BestEver2);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
                 }
                 else
                 {
@@ -147,22 +132,6 @@ namespace WindowsFormsApp2
                     if (level3.elapsedMs < level3.BestEver)
                         BestEver3 = level3.elapsedMs;
                     label16.Text = (BestEver3 / 1000F).ToString();
-
-                    try
-                    {
-                        // If the directory doesn't exist, create it.
-                        if (!Directory.Exists(@"..\Resources"))
-                            Directory.CreateDirectory(@"..\Resources");
-
-                        using (StreamWriter file = new StreamWriter(@"..\Resources\BestEverTime3.txt"))
-                        {
-                            file.WriteLine(BestEver3);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
                 }
                 else
                 {
@@ -170,6 +139,11 @@ namespace WindowsFormsApp2
                     label4.BackColor = Color.Red;
                 }
             }
+        }
+
+        private void Menu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SavePlayer();
         }
     }
 }
